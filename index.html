@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mobile Form</title>
+  <title>දරුවාගේ තොරතුරු</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      margin: 0;
       padding: 20px;
       background-color: #f2f2f2;
     }
@@ -15,73 +13,65 @@
     .container {
       max-width: 500px;
       margin: auto;
-      background-color: #ffffff;
+      background-color: #fff;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-h2 {
+
+    h2 {
       text-align: center;
     }
 
     label {
+      font-weight: bold;
       display: block;
       margin-top: 10px;
-      margin-bottom: 5px;
-      font-weight: bold;
     }
 
-    input, textarea, button {
+    input, textarea, select, button {
       width: 100%;
-      padding: 12px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 5px;
       margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
       font-size: 16px;
     }
-  button {
-      background-color: #4CAF50;
+
+    button {
+      background-color: #28a745;
       color: white;
       border: none;
     }
 
     button:hover {
-      background-color: #45a049;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 10px;
-      }
+      background-color: #218838;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>📋 Contact Us</h2>
-    <form id="contactForm">
-      <label>Full Name:</label>
-      <input type="text" name="name" placeholder="e.g., Roshan Maduranga" required>
-<label>Email Address:</label>
-      <input type="email" name="email" placeholder="e.g., example@email.com" required>
+    <h2>දරුවාගේ තොරතුරු</h2>
+    <form id="studentForm">
+      <label>දරුවාගේ ෆොටෝ එක:</label>
+      <input type="file" name="photo" accept="image/*">
 
-      <label>Your Message:</label>
-      <textarea name="message" placeholder="Type your message..." rows="5" required></textarea>
+      <label>සම්පූර්ණ නම:</label>
+      <input type="text" name="fullname" required>
 
-      <button type="submit">Submit</button>
+      <label>උපන් දිනය:</label>
+      <input type="date" name="dob" required>
+
+      <button type="submit">යවන්න</button>
     </form>
   </div>
 
   <script>
-    const form = 
-document.getElementById('contactForm');
-    form.addEventListener('submit', function(e) {
+    document.getElementById('studentForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      alert("✅ Your form was submitted. (No backend connected yet)");
+      alert("✅ තොරතුරු යවා ඇත. (මෙම තොරතුරු තවමත් server එකකට save නොවෙයි)");
     });
   </script>
 </body>
 </html>
-
-
