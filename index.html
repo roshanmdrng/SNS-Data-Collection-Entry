@@ -84,6 +84,61 @@
   <option value="4 ශ්‍රේණිය"> D </option>
   <option value="5 ශ්‍රේණිය"> E </option>
 </select><br><br>
+      <label for="grade">දරුවාගේ පන්තිය:</label><br>
+<select name="grade" id="grade" onchange="showSection()" required>
+  <option value="">-- තෝරන්න --</option>
+  <option value="1-5">1 සිට 5</option>
+  <option value="6-9">6 සිට 9</option>
+  <option value="10-11">10 සිට 11</option>
+</select><br><br>
+
+<!-- Section 1-5 -->
+<div id="section-1-5" class="section" style="display: none;">
+  <label>1-5 ශ්‍රේණිය විශේෂ විෂයය තෝරන්න:</label><br>
+  <select name="subject1">
+    <option value="සිංහල">සිංහල</option>
+    <option value="ගණිතය">ගණිතය</option>
+    <option value="පරිසරය">පරිසරය</option>
+  </select><br><br>
+</div>
+
+<!-- Section 6-9 -->
+<div id="section-6-9" class="section" style="display: none;">
+  <label>6-9 ශ්‍රේණිය විෂය තෝරන්න:</label><br>
+  <select name="subject2">
+    <option value="ඉතිහාසය">ඉතිහාසය</option>
+    <option value="විද්‍යාව">විද්‍යාව</option>
+    <option value="ගණිතය">ගණිතය</option>
+  </select><br><br>
+</div>
+
+<!-- Section 10-11 -->
+<div id="section-10-11" class="section" style="display: none;">
+  <label>10-11 ශ්‍රේණිය විෂය තෝරන්න:</label><br>
+  <select name="subject3">
+    <option value="ජීව විද්‍යාව">ජීව විද්‍යාව</option>
+    <option value="භෞතික විද්‍යාව">භෞතික විද්‍යාව</option>
+    <option value="රසායන විද්‍යාව">රසායන විද්‍යාව</option>
+  </select><br><br>
+</div>
+
+<script>
+  function showSection() {
+    var grade = document.getElementById("grade").value;
+
+    document.querySelectorAll(".section").forEach(div => div.style.display = "none");
+
+    if (grade === "1-5") {
+      document.getElementById("section-1-5").style.display = "block";
+    } else if (grade === "6-9") {
+      document.getElementById("section-6-9").style.display = "block";
+    } else if (grade === "10-11") {
+      document.getElementById("section-10-11").style.display = "block";
+    }
+  }
+</script>
+
+      
       <label>උපන් දිනය:</label>
       <input type="date" name="dob" required>
 
